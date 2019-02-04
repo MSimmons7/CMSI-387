@@ -19,11 +19,12 @@ int main(int argc, char *argv[]){
   }
 
   char ch;
-  scanf("%c", &ch);
+  ch=fgetc(stdin);
   if(ch==10) {
       pthread_cancel(child_thread);
       printf("Child thread killed;\n");
       return 0;
-  }
+  } 
+  
 }
 
