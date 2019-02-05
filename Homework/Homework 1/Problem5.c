@@ -18,13 +18,16 @@ int main(int argc, char *argv[]){
     fprintf(stderr, "pthread_create failed with code %d\n", code);
   }
 
-  char ch;
-  ch=fgetc(stdin);
-  if(ch==10) {
+
+  while(1) {
+    char ch;
+    ch=fgetc(stdin);
+    if(ch==10) {
       pthread_cancel(child_thread);
       printf("Child thread killed;\n");
-      return 0;
-  } 
-  
+      break;
+    } 
+  }
+  return 0;
 }
 
