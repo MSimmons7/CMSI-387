@@ -6,3 +6,4 @@
 ## 4c. The first one is more efficient, because even though on paper the second one is running concurrently, it takes longer to finish because of the cost of switching. If the switches were faster, it would be a different story.
 ## 5. The sleeping thread can print its periodic messages while the main thread is waiting for its input. Yes the main thread can read input, kill the main thread, and print out a message.
 ## 6. The order T1-T2-T3 had the shortest average turnaround time, and the scheduling policy that produces this order is Shortest Job First.
+![Thread orders](https://github.com/MSimmons7/CMSI-387/blob/master/Homework/Homework%201/Homework%201%20Problem%206.jpeg)
