@@ -1,13 +1,11 @@
 #### 1.1
-For our modification, we will randomly change the desktop theme to an entirely newly designed desktop theme upon startup.
+For our modification, we will create a new command that will allow users to create an additional user account. 
 
 #### 1.2
-For the average user, changing the theme is rather difficult and tedious and computers are meant to be customized. 
-The user will never get bored because there will always be a fresh new theme waiting for them.
-We want to make Linux more palatable for those coming from Mac or Windows.
+This modification is a good idea because it simplifies the process of creating accounts, which can prove especially daunting for IT admins who have to create tons of new accounts.
 
 #### 1.3
 We aren't sure exactly what modules (if any) we will need to accomplish this.
 
 #### 1.4
-We will be creating a theme module that will run on its own without configuration like GNOME.
+We don't think we'll need to make any new modules to accomplish this.
