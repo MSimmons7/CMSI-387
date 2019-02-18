@@ -1,0 +1,20 @@
+Crowther/Rajavasireddy/Simmons
+
+CMSI 387 Operating Systems
+	Semester Project
+===================================
+
+This is a good idea.  You have nailed the fact that creating
+user accounts is a time consuming and error-prone process when
+it is done manually.  This is particularly true with Windows
+since one needs to make sure the proper user roles are put in
+place and permissions applied.  For Linux, something similar
+is needed, so the admin can do the task with fewer manual
+steps.
+
+There are already operating system tools in place that do this
+ABOVE the kernel level, but encapsulating the operations into
+the kernel is a worthy project!
+
+Project approved.  Good work and good luck!
+
