@@ -66,46 +66,21 @@
    }
 
 
-
-
-
-  /* public class Simple2Threads {
-public static void main(String args[]){
-Thread childThread = new Thread(new Runnable(){
-public void run(){
-sleep(3000);
-System.out.println("Child is done sleeping 3 seconds.");
+void sellTicket(){
+  pthread_mutex_lock(&my_mutex);
+  if(seatsRemaining > 0){
+    dispenseTicket();
+    seatsRemaining = seatsRemaining - 1;
+    cashOnHand = cashOnHand + PRICE;
+  } else
+    displaySorrySoldOut();
+  pthread_mutex_unlock(&my_mutex);
 }
-});
-childThread.start();
-sleep(5000);
-System.out.println("Parent is done sleeping 5 seconds.");
+void audit(){
+  pthread_mutex_lock(&my_mutex);
+  int revenue = (TOTAL_SEATS - seatsRemaining) * PRICE;
+  if(cashOnHand != revenue + STARTING_CASH){
+    printf("Cash fails to match.\n");
+exit(1); }
+  pthread_mutex_unlock(&my_mutex);
 }
-private static void sleep(int milliseconds){
-try{
-Thread.sleep(milliseconds);
-} catch(InterruptedException e){
-// ignore this exception; it won’t happen anyhow
-}
-}
-}
-
-#include <pthread.h>
-#include <unistd.h>
-#include <stdio.h>
-static void *child(void *ignored){
-sleep(3);
-printf("Child is done sleeping 3 seconds.\n");
-return NULL;
-}
-int main(int argc, char *argv[]){
-pthread_t child_thread;
-int code;
-code = pthread_create(&child_thread, NULL, child, NULL);
-if(code){
-fprintf(stderr, "pthread_create failed with code %d\n", code);
-}
-sleep(5);
-printf("Parent is done sleeping 5 seconds.\n");
-return 0;
-} */
