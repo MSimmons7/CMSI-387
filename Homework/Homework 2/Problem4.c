@@ -25,7 +25,9 @@ public class BoundedBuffer {
             firstOccupied = (firstOccupied + 1) % buffer.length;
             numOccupied--;
             // in case any inserts are waiting for space, wake them
-            notifyAll();
+            if (buffer.length == 0 || buffer.length == 20) {
+                notifyAll();
+            }
             return retrieved;
         }
 }
