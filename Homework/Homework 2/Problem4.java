@@ -12,7 +12,9 @@ public class BoundedBuffer {
                 buffer[(firstOccupied + numOccupied) % buffer.length] = o;
                 numOccupied++;
                 // in case any retrieves are waiting for data, wake them
-                notifyAll();
+                if (buffer.length == 0 || buffer.length == 20) {
+                    notifyAll();
+                }
             }
     public synchronized Object retrieve()
         throws InterruptedException
