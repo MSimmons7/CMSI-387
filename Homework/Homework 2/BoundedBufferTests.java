@@ -1,38 +1,39 @@
-public class BoundedBufferTests {
-
-    //Object constructor to test with
-    class testObject {
-        String error;
-        testObject (String error) {
-            this.error = error;
-        }
-    }
+public class BoundedBufferTests extends BoundedBuffer {
 
      public static void main (String[] args) {
-        testInsert();              
-        testRetrieve();            
+        BoundedBuffer buffer = new BoundedBuffer();
+        try {
+            testInsert(buffer);              
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            buffer.insert("This a retrieve example");             
+            testRetrieve(buffer);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }                        
      }
 
-     //insert test
-     public static void  testInsert() {
-        testObject insertObject1 = new testObject(“This is an insert example”);
+     public static void testInsert(BoundedBuffer buffer) throws InterruptedException {
+        Object objectOne = "This an insert object";
 
-        System.out.println(”Test if object exists: ”);
-        insertObject1.insert(insertObject1);
+        System.out.println("Object exists?: ");
+        buffer.insert(objectOne);
         try { 
-            System.out.println(insertObject1.length == 25 ? “true” : “false” ); 
+            System.out.println(objectOne.equals("This is an insert object")); 
         }
         catch( Exception e ) { 
             System.out.println ( false ); 
         }
      }
  
-     //retrieve test
-     public static void testRetrieve() {
-        testObject retrieveObject1 = new testObject("This is a retrieve example");
-
+     public static void testRetrieve(BoundedBuffer buffer) throws InterruptedException {
+        Object objectOne = "retrieve object";
         try { 
-            System.out.println(retrieveObject1.retrieve() == "This is a retrieve example" ? "true" : "false" ); 
+            System.out.println(buffer.retrieve() == "retrieve object");
         }
         catch( Exception e ) { 
             System.out.println ( false ); 
