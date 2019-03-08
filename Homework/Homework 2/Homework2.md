@@ -4,6 +4,9 @@ When the order of these two commands is reversed, the problem that arises it tha
 ##2.##
 The methods cannot be generalized and need to be called on a specific state and cannot be generalized like it would be if the first three lines are replaced.
 
+##5.##
+In two-phase locking, one transaction runs at a time, so it is not possible for T2 to see the old value of x but the new value of y. With “read committed” isolation level, due to the short read locks, it is possible for T2 to see the old value of x but the new value of y. With snapshot isolation, a transaction can read all entities from the version that was most recently committed when the transaction started. Any writes done since then by other transactions are completely ignored, so it is not possible for T2 to see the old value of x but the new value of y.
+
 ##6.##
 The virtual address of the last 4-byte word in page 6 is 24552, which translates to a physical address of 4072. The virtual address of the first 4-byte word in page 6 is 20480, which translates to a physical address of 0.
 
