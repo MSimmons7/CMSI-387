@@ -18,3 +18,4 @@ The different numbers of array sizes don't make much of a difference. I am runni
 
 **9.**
 There are 8 processes. 
+![alt text](https://github.com/MSimmons7/CMSI-387/blob/master/Homework/Homework%202/network.png)
