@@ -3,5 +3,11 @@
 #include <stdint.h>
 
 int main(int argc, char *argv[]){
-  arr = calloc(1000000, )
+  int arrSize = 1000000;
+  char arr[arrSize];
+  for (int i = 0; i < arrSize; i++) {
+    if (i == 4095) {
+      return arr[i];
+    }
+  }
 }

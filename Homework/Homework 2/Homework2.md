@@ -6,6 +6,8 @@ The methods cannot be generalized and need to be called on a specific state and 
 
 ##5.##
 
+##6.##
+The virtual address of the last 4-byte word is 24552, and the physical address is 4072. The virtual address of the first 4-byte word is 20457, and the physical address is 0.
 
 ##7.##
-You can get 1047552 by the following calculation: 1024*32*32 - 1024. You multiply 32^2 by 1024 since the table is an IA-32 two-level page table has a page directory that can point to 1024 chunks of the page table. What this calculation does is it finds the very last page and then, by subtracting 1024, goes to the beginning of the last chunk. If you add one (i.e. go to the next page in the chunk), you get 1047553. 
+You can get 1047552 by the following calculation: 1024 * 32 * 32 - 1024. You multiply 32^2 by 1024 since the table is an IA-32 two-level page table has a page directory that can point to 1024 chunks of the page table. What this calculation does is it finds the very last page and then, by subtracting 1024, goes to the beginning of the last chunk. If you add 1 (i.e. go to the next page in the chunk), you get 1047553. 
