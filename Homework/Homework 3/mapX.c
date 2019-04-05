@@ -1,26 +1,27 @@
+#include <stdio.h>
 #include <sys/mman.h>
-#include <sys/types.h>
-#include <fcntl.h>
 #include <unistd.h>
-#include <sys/stat.h>
-#include <assert.h>
-size_t getFilesize(const char* filename) {
-    struct stat st;
-    stat(filename, &st);
-    return st.st_size;
-}
-int main(int argc, char** argv) {
-    size_t filesize = getFilesize(argv[1]);
-    //Open file
-    int fd = open(argv[1], O_RDONLY, 0);
-    assert(fd != -1);
-    //Execute mmap
-    void* mmappedData = mmap(NULL, filesize, PROT_READ, MAP_PRIVATE, fd, 0);
-    assert(mmappedData != MAP_FAILED);
-    //Write the mmapped data to stdout (= FD #1)
-    write(1, mmappedData, filesize);
-    //Cleanup
-    int rc = munmap(mmappedData, filesize);
-    assert(rc == 0);
-    close(fd);
+#include <fcntl.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(void) {
+  int fd = open("../Homework 3/Sherlock.txt", O_RDONLY);
+  size_t pagesize = getpagesize();
+  char * region = mmap(
+    (void*) (pagesize * (1 << 20)), pagesize,
+    PROT_READ, MAP_FILE|MAP_PRIVATE,
+    fd, 0
+  );
+  char *asChar = (char*)region;
+  char currByte = asChar[8];
+  if (strncmp("currByte", "X", 8)) {
+      printf("Success\n");
+      abort();
+  } else {
+      printf("FAIL\n");
+      close(fd);
+  }
+  close(fd);
+  return 0;
 }
