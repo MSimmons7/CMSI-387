@@ -1,0 +1,1 @@
+The Java class from Chapter 4 that would be appropriate to use for the holding area is a buffer. In a buffer, every time the producer has a new value ready, the producer will store the value into an intermediate storage area.
