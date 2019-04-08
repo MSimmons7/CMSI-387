@@ -1,0 +1,36 @@
+
+Evaluation for Homework 3
+CMSI 387 - Operating Systems
+============================
+
+Question 1: dining philosophers program:   20.00 points out of 20 possible
+Question 2: why immune explanation     :   10.00 points out of 10 possible
+Question 3: file processing "C" program:   20.00 points out of 20 possible
+Question 4: mmap program "C" program   :   20.00 points out of 20 possible
+Question 5: appropriate class explained:   10.00 points out of 10 possible
+
+Total possible points:     80.00 points
+           your score:     80.00 points
+       homework total:     80.00/80.00 = 100.00% which is an A-plus
+
+Comments:
+---------
+Nice job using Sherlock Holmes as the input file!  I got distracted reading...
+
+A novel approach to the deadlock problem, of having them switch forks!  You could
+also consider a random wait time while holding only one fork [chopstick]...
+
+Also, good naming using the philosophers ~~ I wonder if Kant knew how to even USE
+chopsticks....
+
+Nice work!
+
+Semester so far:
+
+   homework01 @ 10%:  100.00% = 10.00 points
+   homework02 @ 10%:   93.00% =  9.30 points
+   homework03 @ 10%:  100.00% = 10.00 points
+   particip.  @ 10%:  100.00% = 10.00 points
+   proj pt. 1 @ 20%:  100.00% = 20.00 points
+
+       total points:  59.30 out of 60.00 = 98.93% which is an A-plus
