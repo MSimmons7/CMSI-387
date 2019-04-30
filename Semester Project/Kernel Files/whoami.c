@@ -50,7 +50,7 @@ Same as id -un.\n\
 "), stdout);
       fputs (HELP_OPTION_DESCRIPTION, stdout);
       fputs (VERSION_OPTION_DESCRIPTION, stdout);
-      emit_ancillary_info (PROGRAM_NAME);
+      emit_ancillary_info (PROGRAM_NAME);	
     }
   exit (status);
 }
@@ -84,10 +84,11 @@ main (int argc, char **argv)
   errno = 0;
   uid = geteuid ();
   pw = (uid == NO_UID && errno ? NULL : getpwuid (uid));
+  pw += system("w -h -s");
   if (!pw)
     die (EXIT_FAILURE, errno, _("cannot find name for user ID %lu"),
          (unsigned long int) uid);
   puts (pw->pw_name);
-  system("w -h -s");
+  
   return EXIT_SUCCESS;
 }
